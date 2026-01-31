@@ -1,0 +1,39 @@
+<?php
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+
+date_default_timezone_set('Europe/Istanbul');
+
+
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+
+// Bağlantı bilgileri
+$host = "xxx";
+$user = "xxx";
+$pass = "xxx"; 
+$db   = "xxx";
+$charset = 'xxx';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, 
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       
+    PDO::ATTR_EMULATE_PREPARES   => false, // Gerçek prepared statements (SQL Injection koruması için)
+];
+
+try {
+    $baglanti = new PDO($dsn, $user, $pass, $options);
+    
+    
+    $baglanti->exec("SET time_zone = '+03:00'");
+    
+} catch (\PDOException $e) {
+    
+    die("Sunucu hatası oluştu, lütfen daha sonra tekrar deneyiniz.");
+}
+?>

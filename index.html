@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CES Çankaya | Computer Engineering Society</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        
+        :root {
+            --neon-blue: #00f3ff;
+            --dark-blue: #0044ff;
+            --bg-color: #050505;
+            --text-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        .main-logo {
+            width: 180px;
+            height: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.3));
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .main-logo:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 20px rgba(0, 243, 255, 0.6));
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
+        }
+
+        h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+            letter-spacing: 1px;
+        }
+
+        
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .neon-btn {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            padding: 12px 35px;
+            border: 1px solid var(--neon-blue);
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 0 5px rgba(0, 243, 255, 0.2), inset 0 0 5px rgba(0, 243, 255, 0.1);
+        }
+
+        .login-btn {
+            background-color: rgba(0, 243, 255, 0.05);
+        }
+
+        .neon-btn:hover {
+            background-color: var(--neon-blue);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-blue);
+            transform: translateY(-3px);
+            font-weight: 700;
+        }
+
+        
+        footer {
+            padding: 70px 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Üstten hizala */
+            gap: 50px; /* İki grup arasındaki boşluk */
+            width: 100%;
+        }
+
+        
+        .footer-item {
+            display: flex;
+            flex-direction: column; /* Alt alta diz */
+            align-items: center;
+            gap: 10px; /* Logo ile yazı arası boşluk */
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        
+        .footer-item:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        .footer-logo {
+            height: 45px;
+            width: auto;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .footer-item:hover .footer-logo {
+            filter: grayscale(0%);
+        }
+
+        .footer-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem; /* Küçük ve kibar font */
+            color: var(--text-white);
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.5rem; }
+            .nav-menu { flex-direction: column; width: 80%; }
+            .neon-btn { width: 100%; display: block; margin-bottom: 10px; }
+            footer { gap: 30px; } /* Mobilde footer boşluğunu azalt */
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <img src="assets/ceslogotrans.png" alt="CES Logo" class="main-logo">
+        
+        <h1>Computer Engineering Society</h1>
+        <h2>Çankaya Üniversitesi</h2>
+        
+        <div class="nav-menu">
+            <button class="neon-btn" onclick="window.location.href='about.html'">HAKKIMIZDA</button>
+            <button class="neon-btn" onclick="window.location.href='page1.html'">HABERLER</button>
+            <button class="neon-btn" onclick="window.location.href='contact.html'">İLETİŞİM</button>
+            <button class="neon-btn login-btn" onclick="window.location.href='login.php'">GİRİŞ YAP</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-item" onclick="window.location.href='https://maps.myenginar.com/'">
+            <img src="assets/enginar.png" alt="Enginar Logo" class="footer-logo">
+            <span class="footer-text">Okulun Haritası</span>
+        </div>
+
+        <div class="footer-item" onclick="window.location.href='https://www.cankaya.edu.tr/'">
+            <img src="assets/Çankaya_Üniversitesi_logo.png" alt="Çankaya Üni Logo" class="footer-logo">
+            <span class="footer-text">Üniversite Resmi Sayfası</span>
+        </div>
+    </footer>
+
+</body>
+</html>

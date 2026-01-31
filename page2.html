@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CES Çankaya | Haberler - Sayfa 2</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    
+    :root {
+      --neon-blue: #00f3ff;
+      --bg-color: #050505;
+      --text-white: #ffffff;
+      --glass-bg: rgba(0, 0, 0, 0.8);
+      --card-bg: rgba(255, 255, 255, 0.03);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-white);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      background-image: 
+          linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: relative;
+    }
+
+    .logo {
+      height: 90px;
+      width: auto;
+      filter: drop-shadow(0 0 5px rgba(0, 243, 255, 0.3));
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo:hover { transform: scale(1.05); }
+
+    .menu-btn {
+      background: transparent;
+      border: 1px solid var(--neon-blue);
+      color: var(--neon-blue);
+      font-size: 1.5rem;
+      padding: 5px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 5px rgba(0, 243, 255, 0.2);
+    }
+
+    .menu-btn:hover {
+      background: var(--neon-blue);
+      color: #000;
+      box-shadow: 0 0 15px var(--neon-blue);
+    }
+
+   
+    .nav-box {
+      display: none;
+      position: absolute;
+      top: 100px;
+      right: 40px;
+      background-color: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--neon-blue);
+      border-radius: 8px;
+      padding: 20px;
+      flex-direction: column;
+      gap: 15px;
+      min-width: 200px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      z-index: 100;
+    }
+
+    .nav-box.active { display: flex; }
+
+    .nav-box a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+      padding: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: color 0.3s;
+    }
+    .nav-box a:last-child { border-bottom: none; }
+    .nav-box a:hover { color: var(--neon-blue); text-shadow: 0 0 8px var(--neon-blue); }
+
+    
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: var(--neon-blue);
+      margin-bottom: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+    }
+
+    
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    
+    .news-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--neon-blue);
+      box-shadow: 0 5px 20px rgba(0, 243, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .news-card h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .news-card p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Kart içi buton */
+    .card-btn {
+      background: transparent;
+      color: var(--neon-blue);
+      border: 1px solid var(--neon-blue);
+      padding: 10px 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s;
+      width: 100%;
+      text-transform: uppercase;
+    }
+
+    .card-btn:hover {
+      background: var(--neon-blue);
+      color: black;
+      font-weight: 700;
+      box-shadow: 0 0 10px var(--neon-blue);
+    }
+
+    
+    .pagination {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .pagination a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      padding: 12px 30px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 30px;
+      transition: all 0.3s;
+    }
+
+    .pagination a:hover {
+      border-color: var(--neon-blue);
+      color: var(--neon-blue);
+      box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+    }
+
+    /* Mobil Uyum */
+    @media (max-width: 768px) {
+      header { padding: 15px 20px; }
+      .logo { height: 60px; }
+      .nav-box { right: 20px; top: 90px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">
+        <img src="assets/ceslogotrans.png" alt="Logo" class="logo">
+    </a>
+    <button id="menu-btn" class="menu-btn">☰</button>
+    
+    <nav id="nav-box" class="nav-box">
+      <a href="index.html">ANA SAYFA</a>
+      <a href="about.html">HAKKIMIZDA</a>
+      <a href="contact.html">İLETİŞİM</a>
+      <a href="login.php">GİRİŞ YAP</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Haberler - Sayfa 2</h1>
+
+    <div class="news-grid">
+        <article class="news-card">
+            <h2>Haber Örneği</h2>
+            <p>Haber örneği detaylarını görüntülemek için aşağıdaki butona tıklayınız.</p>
+            <button class="card-btn" onclick="window.location.href='haber1.html'">Habere Git -></button>
+        </article>
+
+        <article class="news-card">
+            <h2>Sayfa 2 Haber 2</h2>
+            <p>Haber 2 metni ön izleme alanı. Burada haberin kısa bir özeti yer alacak.</p>
+            <button class="card-btn">Habere Git -></button>
+        </article>
+    </div>
+
+    <div class="pagination">
+      <a href="page1.html">« Önceki Sayfa</a>
+    </div>
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navBox = document.getElementById('nav-box');
+
+    menuBtn.addEventListener('click', () => {
+      navBox.classList.toggle('active');
+      if (navBox.classList.contains('active')) {
+        menuBtn.innerHTML = "✕";
+      } else {
+        menuBtn.innerHTML = "☰";
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!navBox.contains(event.target) && !menuBtn.contains(event.target)) {
+        navBox.classList.remove('active');
+        menuBtn.innerHTML = "☰";
+      }
+    });
+  </script>
+</body>
+</html>

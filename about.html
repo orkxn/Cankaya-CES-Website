@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CES Çankaya | Hakkımızda</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    
+    :root {
+      --neon-blue: #00f3ff;
+      --bg-color: #050505;
+      --text-white: #ffffff;
+      --glass-bg: rgba(0, 0, 0, 0.8);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-white);
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      background-image: 
+          linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px; /* Kenar boşlukları */
+      position: relative;
+    }
+
+    
+    .logo {
+      height: 90px; /* 50px'den 90px'e çıkarıldı */
+      width: auto;
+      filter: drop-shadow(0 0 5px rgba(0, 243, 255, 0.3));
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .logo:hover {
+      transform: scale(1.05); /* Üzerine gelince hafif büyüsün */
+    }
+
+    
+    .menu-btn {
+      background: transparent;
+      border: 1px solid var(--neon-blue);
+      color: var(--neon-blue);
+      font-size: 1.5rem;
+      padding: 5px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 5px rgba(0, 243, 255, 0.2);
+    }
+
+    .menu-btn:hover {
+      background: var(--neon-blue);
+      color: #000;
+      box-shadow: 0 0 15px var(--neon-blue);
+    }
+
+    
+    .nav-box {
+      display: none;
+      position: absolute;
+      top: 100px; /* Header yükseldiği için menüyü biraz aşağı ittik */
+      right: 40px;
+      background-color: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--neon-blue);
+      border-radius: 8px;
+      padding: 20px;
+      flex-direction: column;
+      gap: 15px;
+      min-width: 200px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      z-index: 100;
+    }
+
+    .nav-box.active {
+      display: flex;
+    }
+
+    .nav-box a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+      padding: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: color 0.3s;
+    }
+
+    .nav-box a:last-child { border-bottom: none; }
+
+    .nav-box a:hover {
+      color: var(--neon-blue);
+      text-shadow: 0 0 8px var(--neon-blue);
+    }
+
+    
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: var(--neon-blue);
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--neon-blue);
+      display: inline-block;
+      padding-bottom: 10px;
+      text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 20px;
+      border-left: 3px solid rgba(0, 243, 255, 0.3);
+      padding-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 15px 20px; }
+      .logo { height: 60px; } /* Mobilde çok büyük olmasın*/
+      .nav-box { right: 20px; top: 90px; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">
+        <img src="assets/ceslogotrans.png" alt="CES Logo" class="logo">
+    </a>
+    
+    <button id="menu-btn" class="menu-btn">☰</button>
+    
+    <nav id="nav-box" class="nav-box">
+      <a href="index.html">ANA SAYFA</a>
+      <a href="page1.html">HABERLER</a>
+      <a href="contact.html">İLETİŞİM</a>
+      <a href="login.php">GİRİŞ YAP</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Hakkımızda</h1>
+    <p>
+        Çankaya Üniversitesi Bilgisayar Mühendisliği Topluluğu (CES), teknolojiyi ve mühendisliği bir araya getirerek öğrencilerin gelişimine katkı sağlamayı amaçlar.
+    </p>
+    <p>
+        Buraya topluluk hakkında daha detaylı bilgiler, vizyon, misyon ve yapılan etkinliklerin özeti eklenebilir. Tasarım dili, modern ve teknolojik yapımızı yansıtacak şekilde kurgulanmıştır.
+    </p>
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const navBox = document.getElementById('nav-box');
+
+    menuBtn.addEventListener('click', () => {
+      navBox.classList.toggle('active');
+      if (navBox.classList.contains('active')) {
+        menuBtn.innerHTML = "✕";
+      } else {
+        menuBtn.innerHTML = "☰";
+      }
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!navBox.contains(event.target) && !menuBtn.contains(event.target)) {
+        navBox.classList.remove('active');
+        menuBtn.innerHTML = "☰";
+      }
+    });
+  </script>
+</body>
+</html>
